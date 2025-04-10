@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        function addNumbers() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var resultDiv = document.getElementById('result');
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var sum = num1 + num2;
+                resultDiv.textContent = "The sum is: " + sum;
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Please enter valid numbers.";
+                resultDiv.style.color = "red";
+            }
+        }
+
+        function refreshPage() {
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <label for="num1">Enter the first number:</label>
+        <input type="text" id="num1"><br><br>
+
+        <label for="num2">Enter the second number:</label>
+        <input type="text" id="num2"><br><br>
+
+        <button onclick="addNumbers()">Add The Two Numbers</button>
+        <button onclick="refreshPage()">Refresh The Page</button>
+
+        <div id="result" class="result"></div>
+    </div>
+</body>
+</html>
